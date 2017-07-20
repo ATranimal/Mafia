@@ -1,3 +1,7 @@
+{% extends 'mafia/base.html' %}
+
+{% block body %}
+
 <h1>Index</h1>
 
 {% if latest_setup_list %}
@@ -9,3 +13,5 @@
 {% else %}
     <p>No setups are available.</p>
 {% endif %}
+
+{% endblock %}
