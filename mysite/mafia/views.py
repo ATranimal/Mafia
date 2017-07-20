@@ -39,3 +39,9 @@ class RoleDetailView(generic.DetailView):
     # role = get_object_or_404(Role, pk=role_id)
     # setups = role.setup.all()
     # return render(request, 'mafia/role_detail.html', {'role': role,'setups': setups})
+
+class HowToPlayView(generic.TemplateView):
+    template_name = 'mafia/howtoplay.html'   
+
+class RulesetView(generic.TemplateView):
+    template_name = 'mafia/ruleset.html'   

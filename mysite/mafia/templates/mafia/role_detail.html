@@ -1,18 +1,17 @@
 {% extends 'mafia/base.html' %}
 
 {% block body %}
+<div class="container">
+	<h1>{{ role.name }}</h1>
+	<p>Description: {{ role.description }}</p
 
-<a href="{% url 'index' %}">Home</a>    
+	<p>Setups Used In</p>
 
-<h1>{{ role.name }}</h1>
-<p>Description: {{ role.description }}</p
-
-<p>Setups Used In</p>
-
-<ul>
-    {% for setupRole in role.setuprole_set.all %}
-    <li><a href="{% url 'setup_detail' setupRole.setup.id %}">{{ setupRole.setup.name }}</a></li>
-    {% endfor %}
-</ul>
+	<ul>
+	    {% for setupRole in role.setuprole_set.all %}
+	    <li><a href="{% url 'setup_detail' setupRole.setup.id %}">{{ setupRole.setup.name }}</a></li>
+	    {% endfor %}
+	</ul>
+</div>
 
 {% endblock %}

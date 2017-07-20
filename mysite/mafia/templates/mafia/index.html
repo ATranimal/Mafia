@@ -1,17 +1,24 @@
 {% extends 'mafia/base.html' %}
 
 {% block body %}
+<div class="container">
+	<h1>McGill Mafia Club</h1>
+	<br>
+	<p>Welcome to the homepage of the McGill Mafia Club. Here you will find the setups that we currently have in our rotation, as well as our searchable database of prebuilt setups and roles. We meet every Tuesday at the SSMU 4th Floor Clubs Lounge at 7pm. </p>
 
-<h1>Index</h1>
 
-{% if latest_setup_list %}
-    <ul>
-    {% for setup in latest_setup_list %}
-        <li><a href="{% url 'setup_detail' setup.id %}">{{ setup.name }}</a></li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No setups are available.</p>
-{% endif %}
+
+	{% if latest_setup_list %}
+	    <ul>
+	    {% for setup in latest_setup_list %}
+	        <li><a href="{% url 'setup_detail' setup.id %}">{{ setup.name }}</a></li>
+	    {% endfor %}
+	    </ul>
+	{% else %}
+	    <p>No setups are available.</p>
+	{% endif %}
+
+
+</div>
 
 {% endblock %}
