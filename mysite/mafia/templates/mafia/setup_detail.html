@@ -1,0 +1,12 @@
+<a href="{% url 'index' %}">Home</a>
+
+<h1>{{ setup.name }}</h1>
+<p>Description: {{ role.description }}</p
+
+<p>Roles In Setup</p>
+
+<ul>
+        {% for role in setup.roles.all %}
+        <li><a href="{% url 'role_detail' role.id %}">{{ role.name }}</a></li>
+        {% endfor %}
+</ul>

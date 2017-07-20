@@ -1,0 +1,11 @@
+<h1>Index</h1>
+
+{% if latest_setup_list %}
+    <ul>
+    {% for setup in latest_setup_list %}
+        <li><a href="{% url 'setup_detail' setup.id %}">{{ setup.name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No setups are available.</p>
+{% endif %}
