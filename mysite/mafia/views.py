@@ -13,7 +13,7 @@ class IndexView(generic.ListView):
 
     def get_queryset(self):
         """Return the last five published questions."""
-        return Setup.objects.order_by('-playerNumber')[:5] 
+        return Setup.objects.order_by('-name')[:5] 
 
     # latest_setup_list = Setup.objects.order_by('-playerNumber')[:5] 
     # context = {

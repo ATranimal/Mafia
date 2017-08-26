@@ -4,14 +4,17 @@ from django.db import models
 class Setup(models.Model):
     name = models.CharField(max_length=255)
     description = models.CharField(max_length=1024)
-    playerNumber = models.IntegerField(default = 0)
+    minimumPlayers = models.IntegerField(default = 8)
+    maximumPlayers = models.IntegerField(default = 12)
+    featuredSetup = models.BooleanField(default = False)
     def __str__(self):
         return self.name
 
 class Role(models.Model):
     name = models.CharField(max_length=255) 
-    allignment = models.CharField(max_length=255)
+    alignment = models.CharField(max_length=255)
     description = models.CharField(max_length=1024)
+    action = models.CharField(max_length=1024, default = None)
     setup = models.ManyToManyField(Setup, through='SetupRole', related_name="roles")
     def __str__(self):
         return self.name
