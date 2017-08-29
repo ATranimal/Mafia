@@ -1,15 +1,20 @@
+// button clicking function
+
 console.log(setupList);
-console.log(setupList.length);
-console.log(setupList[0].fields.name);      
+
+$(".panel").fadeOut(1);
 
 $("button").click(function() { 
-    $(".setup_info").empty();
+    $(".panel-heading").empty();
+    $(".panel-body").empty();
+    $(".panel").fadeIn(1000);
 
     for (var i = 0; i < setupList.length; i++) {
         if (setupList[i].fields.name == $(this).attr('id'))
         {
-            $(".setup_info").append("<p>Name: " + setupList[i].fields.name + "</p>" +
-                                    "<p>Description: " + setupList[i].fields.description + "</p>");    
+            $(".panel-heading").append(setupList[i].fields.name);
+            $(".panel-body").append("<p>" + setupList[i].fields.description + "</p>" + 
+                                    "<a href=setups/" + setupList[i].pk + "><p>Click here to see more details!</p></a>");    
         }
     }
 });

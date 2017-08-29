@@ -23,6 +23,12 @@ class SetupDetailView(generic.DetailView):
     model = Setup
     template_name = 'mafia/setup_detail.html'
 
+    def get_context_data(self, **kwargs):
+        context = super(SetupDetailView, self).get_context_data(**kwargs)
+
+        context["roles"] = serializers.serialize("json", Role.objects.all());
+        return context
+
 class RoleDetailView(generic.DetailView):
     model = Role
     template_name = 'mafia/role_detail.html'    

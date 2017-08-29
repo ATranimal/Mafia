@@ -14,14 +14,20 @@
 	    {% for setup in latest_setup_list %}
 			{% if setup.featuredSetup  %}
 				<button id="{{setup.name}}">{{ setup.name }}</button>
+				<a href="{% url 'setup_detail' setup.id %}">{{ setupRole.setup.name }}</a>
 	        {% endif %}
 	    {% endfor %}
 	    </ul>
 	{% else %}
 	    <p>No setups are available.</p>
 	{% endif %}
+	<br>
 
-	<div class="setup_info"></div>
+	
+	<div class="panel panel-default">
+		<div class="panel-heading"></div>
+		<div class="panel-body"></div>
+	</div>
 
 
 <script> var setupList = {{ setups|safe }}; </script>

@@ -1,12 +1,15 @@
 {% extends 'mafia/base.html' %}
 
 {% block body %}
+
+{% load static %}
+
 <div class="container">
 	<h1>{{ setup.name }}</h1>
 	<br>
-	<p>Description: {{ setup.description }}</p
+	<p>Description: {{ setup.description }}</p>
 
-	<p>Roles In Setup</p>
+	<h4>Roles In Setup</h4>
 
 	<ul>
 	        {% for role in setup.roles.all %}
@@ -14,5 +17,8 @@
 	        {% endfor %}
 	</ul>
 </div>
+
+<script> var roleList = {{ roles|safe }}; </script>
+<script src="{% static 'mafia/js/setup_detail.js' %}"></script>
 
 {% endblock %}
