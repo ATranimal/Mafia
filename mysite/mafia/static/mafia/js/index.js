@@ -2,12 +2,12 @@
 
 console.log(setupList);
 
-$(".panel").fadeOut(1);
+$(".panel").fadeOut(0.01);
 
 $("button").click(function() { 
     $(".panel-heading").empty();
     $(".panel-body").empty();
-    $(".panel").fadeIn(1000);
+    $(".panel").fadeIn(200);
 
     for (var i = 0; i < setupList.length; i++) {
         if (setupList[i].fields.name == $(this).attr('id'))

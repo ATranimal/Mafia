@@ -5,17 +5,27 @@
 {% load static %}
 
 <div class="container">
-	<h1>{{ setup.name }}</h1>
-	<br>
-	<p>Description: {{ setup.description }}</p>
+	<div class="row">
+		<div class="col-sm-6">
+			<h1>{{ setup.name }}</h1>
+			<br>
+			<p>Description: {{ setup.description }}</p>
 
-	<h4>Roles In Setup</h4>
+			<h4>Roles In Setup</h4>
 
-	<ul>
-	        {% for role in setup.roles.all %}
-	        <li><a href="{% url 'role_detail' role.id %}">{{ role.name }}</a></li>
-	        {% endfor %}
-	</ul>
+			<ul>
+			        {% for role in setup.roles.all %}
+			        <li><a href="#" id="{{ role.name }}">{{ role.name }}</a>
+			        {% endfor %}
+			</ul>
+		</div>
+		<div class="col-sm-6">
+			<div class="panel panel-default role-info">
+				<div class="panel-heading">My name is</div>
+				<div class="panel-body">HERE WE ARE</div>
+			</div>
+		</div>
+	</div>
 </div>
 
 <script> var roleList = {{ roles|safe }}; </script>

@@ -1,6 +1,5 @@
 p {
 	font-size: 12px;
-    padding-left: 20px;
 }
 
 button {
@@ -19,4 +18,8 @@ button {
 button:hover {
     background-color: #D4BBFD;
     color: white;
+}
+
+.role-info {
+    margin-top: 150px;
 }
