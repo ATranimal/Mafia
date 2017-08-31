@@ -11,23 +11,36 @@
 			<br>
 			<p>Description: {{ setup.description }}</p>
 
-			<h4>Roles In Setup</h4>
+            <div class="player_group">
+                <label class="number_players">Number of players: {{ setup.maximumPlayers }}</label>
+                <input type="range" name="players" class="players" value={{ setup.maximumPlayers }} min={{ setup.minimumPlayers }} max={{ setup.maximumPlayers }}>
+            </div>
+            <br> 
 
-			<ul>
-			        {% for role in setup.roles.all %}
-			        <li><a href="#" id="{{ role.name }}">{{ role.name }}</a>
-			        {% endfor %}
+            <h4>Roles In Setup</h4>
+			<ul class="role_list">
+		        {% for role in setup.roles.all %}
+                    {% if role.alignment == "Mafia" %}
+		                <li><a href="#" id="{{ role.name }}" class="mafia">{{ role.name }}</a>
+                    {% endif %}
+		        {% endfor %}
+                {% for role in setup.roles.all %}
+                    {% if role.alignment == "Town" %}
+                        <li><a href="#" id="{{ role.name }}">{{ role.name }}</a>
+                    {% endif %}
+                {% endfor %}
 			</ul>
 		</div>
 		<div class="col-sm-6">
 			<div class="panel panel-default role-info">
-				<div class="panel-heading">My name is</div>
-				<div class="panel-body">HERE WE ARE</div>
+				<div class="panel-heading">Name</div>
+				<div class="panel-body">Description</div>
 			</div>
 		</div>
 	</div>
 </div>
 
+<script> var setup = {{ setup.roles.all|escapejs }}; </script>
 <script> var roleList = {{ roles|safe }}; </script>
 <script src="{% static 'mafia/js/setup_detail.js' %}"></script>
 

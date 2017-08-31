@@ -1,12 +1,10 @@
 console.log(roleList);
+console.log(setup);
 
 $(".panel").fadeOut(0.01);
 
-function showSetupInfo() {
-	console.log("poop");
-}
+$("a").click(function() {
 
-$("a").click(function() { 
     $(".panel-heading").empty();
     $(".panel-body").empty();
     $(".panel").fadeIn(200);
@@ -24,4 +22,8 @@ $("a").click(function() {
             $("panel-body").append("POOP");
         }
     }
+});
+
+$(".players").change(function() {
+    $(".number_players").text("Number of players: " + $(this).val() );
 });

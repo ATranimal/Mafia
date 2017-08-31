@@ -27,6 +27,7 @@ class SetupDetailView(generic.DetailView):
         context = super(SetupDetailView, self).get_context_data(**kwargs)
 
         context["roles"] = serializers.serialize("json", Role.objects.all());
+        context["setup"] = serializers.serialize("json", Setup.roles.all());
         return context
 
 class RoleDetailView(generic.DetailView):
