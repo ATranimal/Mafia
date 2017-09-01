@@ -19,15 +19,13 @@
 
             <h4>Roles In Setup</h4>
 			<ul class="role_list">
+                <script> var setup = []; var alignments = []</script>
 		        {% for role in setup.roles.all %}
-                    {% if role.alignment == "Mafia" %}
-		                <li><a href="#" id="{{ role.name }}" class="mafia">{{ role.name }}</a>
-                    {% endif %}
-		        {% endfor %}
-                {% for role in setup.roles.all %}
-                    {% if role.alignment == "Town" %}
-                        <li><a href="#" id="{{ role.name }}">{{ role.name }}</a>
-                    {% endif %}
+    
+                    <script> 
+                        setup[{{ forloop.counter0 }}] = "{{role.name}}"; 
+                        alignments[{{ forloop.counter0 }}] = "{{role.alignment}}";
+                    </script>
                 {% endfor %}
 			</ul>
 		</div>
@@ -40,7 +38,6 @@
 	</div>
 </div>
 
-<script> var setup = {{ setup.roles.all|escapejs }}; </script>
 <script> var roleList = {{ roles|safe }}; </script>
 <script src="{% static 'mafia/js/setup_detail.js' %}"></script>
 

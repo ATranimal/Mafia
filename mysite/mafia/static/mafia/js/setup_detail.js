@@ -1,5 +1,6 @@
 console.log(roleList);
 console.log(setup);
+console.log(alignments);
 
 $(".panel").fadeOut(0.01);
 
