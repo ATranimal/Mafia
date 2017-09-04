@@ -11,22 +11,22 @@
 			<br>
 			<p>Description: {{ setup.description }}</p>
 
-            <div class="player_group">
-                <label class="number_players">Number of players: {{ setup.maximumPlayers }}</label>
-                <input type="range" name="players" class="players" value={{ setup.maximumPlayers }} min={{ setup.minimumPlayers }} max={{ setup.maximumPlayers }}>
-            </div>
-            <br> 
+			<div class="player_group">
+				<label class="number_players">Number of players: {{ setup.maximumPlayers }}</label>
+				<input type="range" name="players" class="players" value={{ setup.maximumPlayers }} min={{ setup.minimumPlayers }} max={{ setup.maximumPlayers }}>
+			</div>
+			<br> 
 
-            <h4>Roles In Setup</h4>
+			<h4>Roles In Setup</h4>
 			<ul class="role_list">
-                <script> var setup = []; var alignments = []</script>
-		        {% for role in setup.roles.all %}
-    
-                    <script> 
-                        setup[{{ forloop.counter0 }}] = "{{role.name}}"; 
-                        alignments[{{ forloop.counter0 }}] = "{{role.alignment}}";
-                    </script>
-                {% endfor %}
+				<script> var setup = []; var alignments = []</script>
+				{% for role in setup.roles.all %}
+				
+				<script> 
+					setup[{{ forloop.counter0 }}] = "{{role.name}}"; 
+					alignments[{{ forloop.counter0 }}] = "{{role.alignment}}";
+				</script>
+				{% endfor %}
 			</ul>
 		</div>
 		<div class="col-sm-6">

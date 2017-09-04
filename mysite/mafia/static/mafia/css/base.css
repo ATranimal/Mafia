@@ -3,33 +3,32 @@ p {
 }
 
 button {
-    border-radius: 12px;
-    background-color: #8E65EB;
-    border-color: #281DB3;
-    padding: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  border-radius: 12px;
+  background-color: #A0B8F0;
+  border-color: #1035D4;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
 
-    -webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
 }
 
 button:hover {
-    background-color: #D4BBFD;
-    color: white;
+  background-color: #6585EB;
+  color: white;
 }
 
 .role-info {
-    margin-top: 150px;
+  margin-top: 150px;
 }
 
 .Mafia {
-    color: red;
+  color: red;
 }
 
 a:target {
-    color: green;
+  color: green;
 }
 
 /*Stuff for slider*/
@@ -119,5 +118,5 @@ input[type=range]:focus::-ms-fill-upper {
   background: rgba(74, 144, 204, 0.42);
 }
 .players {
-    width = 200px;
+  width = 200px;
 }
