@@ -14,7 +14,7 @@ class Role(models.Model):
     name = models.CharField(max_length=255) 
     alignment = models.CharField(max_length=255)
     description = models.CharField(max_length=1024)
-    action = models.CharField(max_length=1024, default = None)
+    action = models.CharField(max_length=1024, null=True, default=None)
     setup = models.ManyToManyField(Setup, through='SetupRole', related_name="roles")
     def __str__(self):
         return self.name
